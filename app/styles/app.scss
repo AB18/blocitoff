@@ -1,0 +1,13 @@
+@import 'test.scss';
+
+.practice-header {
+  font-weight: 700;
+  font-size: 72px;
+}
+
+.sample-style {
+  position: relative;
+  .nested-style {
+    float: right;
+  }
+}

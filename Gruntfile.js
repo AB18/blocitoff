@@ -11,7 +11,13 @@ module.exports = function(grunt) {
         files: [
           '<%= appConfig.baseClientPath %>/styles/*.{sass,scss}'
         ],
-        tasks: ['compiler:sass']
+        tasks: ['sass']
+      },
+      jade: {
+        files: [
+          '<%= appConfig.baseClientPath %>/styles/*.{sass,scss}'
+        ],
+        tasks: ['jade']
       },
       livereload: {  
         files: ['Gruntfile.js', 'index.html', '<%= appConfig.baseClientPath %>/**/*.{js,html,css}'],
@@ -20,6 +26,27 @@ module.exports = function(grunt) {
         }
       },
     },
+
+    sass: {
+      dist: {
+        files: [{
+          'public/styles/app.css': 'app/styles/app.scss' 
+        }]
+      }
+    },
+
+    jade: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'app',
+          src: ['templates/*.jade'],
+          dest: '../public',
+          ext: '.html'
+        }]
+      }
+    },
+
     connect: {
       server: {
         options: {
@@ -38,9 +65,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-jade');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-coffee');
 
-  grunt.registerTask('default', 'Serve content, open browser, watch changes', function(target) {
+  grunt.registerTask('default', 'Serve content, open browser, watch changes', function() {
 
     grunt.task.run([
       'connect',
@@ -49,21 +77,12 @@ module.exports = function(grunt) {
 
   });
 
-  require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
+  grunt.registerTask('build', 'compile sass and jade and put in destination files', function() {
 
-grunt.initConfig({
-    sass: {
-        options: {
-            sourceMap: true
-        },
-        dist: {
-            files: {
-                'main.css': 'main.scss'
-            }
-        }
-    }
-});
+    grunt.task.run([
+      'sass'
+    ]);
 
-grunt.registerTask('default', ['sass']);
+  });
 
 };

@@ -1,0 +1,13 @@
+.extra-styles .more-styles {
+  position: relative; }
+
+.practice-header {
+  font-weight: 700;
+  font-size: 72px; }
+
+.sample-style {
+  position: relative; }
+  .sample-style .nested-style {
+    float: right; }
+
+/*# sourceMappingURL=app.css.map */
