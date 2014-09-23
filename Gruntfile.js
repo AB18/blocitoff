@@ -13,12 +13,6 @@ module.exports = function(grunt) {
         ],
         tasks: ['sass']
       },
-      jade: {
-        files: [
-          '<%= appConfig.baseClientPath %>/styles/*.{sass,scss}'
-        ],
-        tasks: ['jade']
-      },
       livereload: {  
         files: ['Gruntfile.js', 'index.html', '<%= appConfig.baseClientPath %>/**/*.{js,html,css}'],
         options: {
@@ -50,11 +44,10 @@ module.exports = function(grunt) {
     connect: {
       server: {
         options: {
-          port: 8000,
+          port: 3000,
           hostname: 'localhost',
-          livereload: 35729,
-          base: './public',
-          open: true,
+          livereload: 4002,
+          base: '.',
           useAvailablePort: true
         }
       }
@@ -64,9 +57,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-coffee');
 
   grunt.registerTask('default', 'Serve content, open browser, watch changes', function() {
 

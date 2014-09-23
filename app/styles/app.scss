@@ -1,13 +1,9 @@
-@import 'test.scss';
-
-.practice-header {
-  font-weight: 700;
-  font-size: 72px;
-}
-
-.sample-style {
-  position: relative;
-  .nested-style {
-    float: right;
-  }
-}
+/* Put your main Sass in this file.
+Add @imports for your other Sass files,
+which MUST be in the app/styles directory.
+When you save, a new build of the app.css file
+(a file that contains all of your styles
+concatenated together) will automatically
+be created. All that's required is that you
+use the @import statements and don't delete the
+<link> tag in index.html with app.css */
