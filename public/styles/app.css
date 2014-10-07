@@ -1,4 +1,4 @@
-/* Put your main Sass in this file.
+touch /* Put your main Sass in this file.
 Add @imports for your other Sass files,
 which MUST be in the app/styles directory.
 When you save, a new build of the app.css file
@@ -8,4 +8,20 @@ be created. All that's required is that you
 use the @import statements and don't delete the
 <link> tag in index.html with app.css */
 
+@import "landing";
+
 /*# sourceMappingURL=app.css.map */
+  html {
+    height: 100%;
+  }
+
+  body {
+    font-family: 'Open Sans';
+    color: black;
+    min-height: 100%;
+  }
+
+  .landing {
+    background: Yellow;
+    padding-bottom: 0;
+  }

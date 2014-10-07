@@ -13,12 +13,12 @@ module.exports = function(grunt) {
         ],
         tasks: ['sass']
       },
-      livereload: {  
-        files: ['Gruntfile.js', 'index.html', '<%= appConfig.baseClientPath %>/**/*.{js,html,css}'],
-        options: {
-          livereload: true
-        }
-      },
+//       livereload: {  
+//         files: ['Gruntfile.js', 'index.html', '<%= appConfig.baseClientPath %>/**/*.{js,html,css}'],
+//         options: {
+//           livereload: true
+//         }
+//       },
     },
 
     sass: {
@@ -29,24 +29,12 @@ module.exports = function(grunt) {
       }
     },
 
-    jade: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: 'app',
-          src: ['templates/*.jade'],
-          dest: '../public',
-          ext: '.html'
-        }]
-      }
-    },
-
     connect: {
       server: {
         options: {
           port: 3000,
-          hostname: 'localhost',
-          livereload: 4002,
+          hostname: '0.0.0.0',
+          //livereload: 8000,
           base: '.',
           useAvailablePort: true
         }

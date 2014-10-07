@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Pending Tasks</h1>
+    <div class="row"  ng-repeat="task in taskList" >
+    <div ng-switch="task.isComplete">
+    <div ng-switch-when="false">
+    <div class="col-md-8">
+      {{task.name}}
+    </div>
+    <div clas="col-md=4">
+      <button type="button" class="btn btn-default btn-lg" ng-click="completeTask(task)">
+                    <span class="glyphicon glyphicon-ok"></span> 
+      </button>
+    </div>
+  </div>
+    </div>
+  </div>
+</div>

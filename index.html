@@ -1,10 +1,37 @@
-<html>
-  <head>
+<!DOCTYPE html>
+<html data-ng-app="Blocitoff">
+ <head>
     <title>Blocitoff</title>
+
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.1/build/cssreset/cssreset-min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="/public/styles/app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+    <script src="/app/scripts/app.js"></script>
+    
   </head>
   <body>
-    <h2 class="practice-header">Blocitoff</h2>
+    <div class="jumbotron">
+       <a ui-sref='landing'>
+          <h2>Task List</h2>
+      </a>
+    </div>
+     <nav class="player-header-nav navbar">
+       <div class="container">
+         <ul class="nav navbar-nav navbar-left">
+            <li><a ui-sref='past'>Previous Tasks</a></li>
+          </ul>
+         <ul class="nav navbar-nav navbar-left">
+            <li>
+              <a ui-sref='addTask'>
+                 <span class="glyphicon glyphicon-plus"></span> 
+              </a>
+           </li>
+          </ul>
+       </div>
+     </nav>
     <div ui-view>
       
     </div>

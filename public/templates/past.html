@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>Previous Tasks</h1>
+    <table class="table table-striped">
+<!--       <tr>
+        <td>Task Name</td>
+        <td>Done</td>  
+      </tr> -->
+     <tr  ng-repeat="task in taskList" >
+        <td> {{task.name}} </td>
+        <td>
+           <span ng-switch="task.isComplete">
+             <span ng-switch-when="true">
+                 <span class="glyphicon glyphicon-ok-circle"></span> 
+             </span>
+            </span>
+        </td>
+    </tr>
+  </table>
+</div>
